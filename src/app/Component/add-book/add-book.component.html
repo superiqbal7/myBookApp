@@ -1,0 +1,115 @@
+<div class="flex-container">
+  <div [formGroup]="bookForm" class="example-container">
+    <legend [ngClass]="{ 'edit-text': isEditable }" [appHighlight]="color">
+      Add New Book
+    </legend>
+    <mat-form-field appearance="fill" class="form-group">
+      <mat-label for="exampleInputEmail1">Book Title</mat-label>
+      <input
+        matInput
+        formControlName="title"
+        type="bookTitle"
+        id="bookTitle"
+        aria-describedby=""
+      /> </mat-form-field
+    ><br />
+    <mat-form-field appearance="fill" class="form-group">
+      <mat-label for="exampleInputPassword1">Author</mat-label>
+      <input
+        matInput
+        formControlName="author"
+        type="authorName"
+        id="authorName"
+        placeholder="Author Name"
+      />
+      <mat-hint
+        *ngIf="
+          bookForm.controls['author'].errors?.required &&
+          bookForm.controls['author'].touched
+        "
+      >
+        Min 3 Character max 10 charecter
+      </mat-hint> </mat-form-field
+    ><br />
+    <mat-form-field appearance="fill" class="form-group">
+      <mat-label for="imgurl">Image URL</mat-label>
+      <input
+        matInput
+        formControlName="imgurl"
+        type="url"
+        id="imgurl"
+        aria-describedby=""
+        placeholder="Enter Image url"
+      /> </mat-form-field
+    ><br />
+    <mat-form-field appearance="fill" class="form-group">
+      <mat-label for="isbn">ISBN</mat-label>
+      <input
+        matInput
+        formControlName="isbn"
+        type="isbn"
+        id="isbn"
+        placeholder="isbn Name"
+      /> </mat-form-field
+    ><br />
+    <mat-form-field appearance="fill" class="form-group">
+      <mat-label for="seller">Seller</mat-label>
+      <input
+        matInput
+        formControlName="seller"
+        type="text"
+        id="seller"
+        aria-describedby=""
+        placeholder="Seller Name"
+      /> </mat-form-field
+    ><br />
+    <mat-form-field appearance="fill" class="form-group">
+      <mat-label for="rating">Rating</mat-label>
+      <input
+        matInput
+        formControlName="rating"
+        type="number"
+        id="rating"
+        placeholder="Book Rating"
+      /> </mat-form-field
+    ><br />
+    <mat-form-field class="example-full-width">
+      <input
+        type="text"
+        placeholder="Genre"
+        aria-label="Number"
+        matInput
+        formControlName="genre"
+        [matAutocomplete]="auto"
+      />
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of options" [value]="option">
+          {{ option }}
+        </mat-option>
+      </mat-autocomplete> </mat-form-field
+    ><br />
+    <button
+      mat-stroked-button
+      color="primary"
+      *ngIf="!bookId"
+      type="button"
+      class="btn btn-outline-primary btn-lg"
+      (click)="addBook()"
+      style="margin-right:20px;"
+      [disabled]="bookForm.invalid"
+    >
+      Save
+    </button>
+    <button
+      mat-stroked-button
+      color="accent"
+      *ngIf="bookId"
+      type="button"
+      class="btn btn-outline-danger btn-lg"
+      (click)="editBook()"
+      style="margin-left:20px;"
+    >
+      Update Book
+    </button>
+  </div>
+</div>

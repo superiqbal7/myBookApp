@@ -1,0 +1,80 @@
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" opened>
+    <a
+      mat-fab
+      color="primary"
+      matTooltip="Add New Book"
+      (click)="addbook()"
+      routerLink="add-book"
+      style="margin: 20px;"
+    >
+      <mat-icon aria-hidden="false" aria-label="Example home icon"
+        >add</mat-icon
+      >
+    </a>
+    <br />
+    <button
+      mat-stroked-button
+      color="primary"
+      class="genrebtn"
+      (click)="allbook()"
+    >
+      All Books</button
+    ><br />
+    <button
+      mat-stroked-button
+      color="primary"
+      class="genrebtn"
+      (click)="scifi()"
+    >
+      Sci-fi</button
+    ><br />
+    <button
+      mat-stroked-button
+      color="primary"
+      class="genrebtn"
+      (click)="thriller()"
+    >
+      Thriller</button
+    ><br />
+    <button
+      mat-stroked-button
+      color="primary"
+      class="genrebtn"
+      (click)="literature()"
+    >
+      Literatre</button
+    ><br />
+    <button
+      mat-stroked-button
+      color="primary"
+      class="genrebtn"
+      (click)="classic()"
+    >
+      Classic</button
+    ><br />
+    <button
+      mat-stroked-button
+      color="primary"
+      class="genrebtn"
+      (click)="novel()"
+    >
+      Novel</button
+    ><br />
+    <br />
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <div>
+      <div>
+        All Books
+      </div>
+      <app-book-card
+        [books]="book"
+        [checkRoute]="checkRoute"
+        (delete)="deleteBook($event)"
+        (edit)="editBook($event)"
+      ></app-book-card>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

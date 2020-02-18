@@ -1,0 +1,23 @@
+<mat-card class="example-card" style="width: 300px;">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title matBadge="{{ data.rating }}" matBadgeOverlap="false">{{
+      data.title | details
+    }}</mat-card-title>
+    <mat-card-subtitle>By {{ data.author }}</mat-card-subtitle>
+  </mat-card-header>
+  <img
+    mat-card-image
+    src="{{ data.image }}"
+    alt="..."
+    style="width: 285px; height: 300px;"
+  />
+  <mat-card-content>
+    <p>
+      A small, agile dog that copes very well with mountainous terrain, the
+      Shiba Inu was originally bred for hunting.
+    </p>
+    <p>ISBN: {{ data.isbn }}</p>
+    <p>Seller: {{ data.seller }}</p>
+  </mat-card-content>
+</mat-card>

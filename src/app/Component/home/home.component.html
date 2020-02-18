@@ -1,0 +1,80 @@
+<div class="jumbotron">
+  <img
+    src="https://www.cafconnection.ca/getmedia/46ade0c2-6f4d-40c3-82ca-c144d376e673/library.jpg.aspx?width=819&height=315&ext=.jpg"
+    style="width:100%; height: 300px;"
+  />
+  <hr class="my-4" />
+</div>
+
+<!-- Book Cards -->
+<p class="mat-h1">Browse book by genre</p>
+<div>
+  <app-genre (bookgenre)="showBookByGenre($event)"></app-genre>
+  <hr class="my-4" />
+</div>
+<p class="mat-h1">{{ text }} Books</p>
+<div class="flex-container">
+  <app-book-card
+    [books]="book"
+    [checkRoute]="checkRoute"
+    (delete)="deleteBook($event)"
+    (edit)="editBook($event)"
+    (details)="openDialog($event)"
+  ></app-book-card>
+</div>
+<!-- <div class="flex-container">
+  <div 
+  class="card" style="width: 18rem;"
+  *ngFor="let item of book"
+  >
+    <img src="{{item.image}}" class="card-img-top" alt="..."
+    style="width: 285px; height: 300px;"
+    >
+    <div class="card-body">
+      <h5 class="card-title">{{item.title}}</h5>
+      <div style="display: flex">
+        <span style="margin-right: 20px;">By  {{item.author}}</span>
+        <span>Rating:   {{item.rating}}</span>
+      </div>
+      <br>
+      <p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <div style="display: flex;">
+        <button class="btn btn-primary" (click)="editBook(item.id)">
+          Edit Book
+        </button>
+        <button class="btn btn-danger" (click)="deleteBook(item.id)">
+          Delete Book
+        </button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- <div class="flex-container">
+    <div class="card mb-2" id="card"
+    *ngFor="let item of book"
+    >
+      <h3 class="card-header">{{item.title}}</h3>
+      <div class="card-body">
+        <h5 class="card-title">By  {{item.author}}</h5>
+        <h6 class="card-subtitle text-muted">Rating:   {{item.rating}}</h6>
+      </div>
+      <img style="height: 200px; width: 100%; display: block;" src="{{item.image}}" alt="Card image" id="cardimg">
+      <div class="card-body">
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>
+      <div class="card-body">
+        <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
+      </div>
+      <div class="card-footer text-muted">
+        Added 2 days ago
+      </div>
+      <button class="btn btn-primary"  (click)="addBook()">
+        Edit Book
+      </button>
+      <button class="btn btn-primary"  (click)="addBook()">
+        Delete Book
+      </button>
+    </div>
+</div> -->

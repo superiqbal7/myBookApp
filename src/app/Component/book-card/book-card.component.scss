@@ -1,0 +1,13 @@
+.flex-container {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  //align-content: space-around;
+  //height: 600px;
+}
+mat-card {
+  width: 250px;
+  margin: 20px;
+}

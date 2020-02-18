@@ -1,0 +1,24 @@
+.flex-container {
+  margin-top: 30px;
+  display: flex;
+  //flex-wrap: wrap;
+  justify-content: space-around;
+  //align-content: space-around;
+  //height: 600px;
+}
+.flex-container > div {
+  //background-color: #f1f1f1;
+  //width: 100px;
+  margin: 10px;
+  //text-align: center;
+  //line-height: 75px;
+  //font-size: 20px;
+}
+.edit-text {
+  color: red;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}

@@ -1,0 +1,63 @@
+<mat-toolbar color="primary" navbar-nav ml-auto>
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+    </button>
+    <h1 routerLink="home">Book Library</h1>
+    <span class="menu-spacer"></span>
+    <div>
+      <a mat-button routerLink="home"> Home </a>
+      <a mat-button *ngIf="state" routerLink="mybook"> My Book </a>
+      <a mat-button routerLink="login" *ngIf="!state" (click)="login()">
+        Login
+      </a>
+      <a
+        mat-button
+        style="align-items: flex-end;"
+        routerLink="register"
+        *ngIf="!state"
+      >
+        Register
+      </a>
+      <a mat-button *ngIf="state" (click)="logout()"> Logout </a>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" routerLink="/">Book Library</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarColor03"
+    aria-controls="navbarColor03"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor03">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="home"
+          >Home<span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="add-book">My Book</a>
+      </li>
+    </ul>
+  </div>
+  <form class="form-inline my-2 my-lg-0">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="login">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="register">Register</a>
+      </li>
+    </ul>
+  </form>
+</nav> -->
